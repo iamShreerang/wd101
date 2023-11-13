@@ -2,12 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const tableBody = document.querySelector('#userTable tbody');
     const registrationForm = document.getElementById('registrationForm');
 
-    // Load existing data from storage on page load
-    const storedData = JSON.parse(localStorage.getItem('userData')) || [];
-    
-    // Clear existing table contents
-    tableBody.innerHTML = '';
-
     // Function to add a row to the table and update storage
     function addTableRow(data) {
         const row = document.createElement('tr');
@@ -19,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
         tableBody.appendChild(row);
     }
 
+    // Load existing data from storage on page load
+    const storedData = JSON.parse(localStorage.getItem('userData')) || [];
     // Display existing data in the table on page load
     storedData.forEach(data => addTableRow(data));
 
