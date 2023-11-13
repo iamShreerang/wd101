@@ -4,71 +4,125 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Registration form</title>
+    <title>Registration Form By hs</title>
     <style>
-        input#name:invalid:focus{
-            border:1px solid red;
-        }
+body{
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    background-color: #f1eef1;
+  }
+  .container {
+    width: 500px;
+    height: 600px; 
+    background-color: #f8f8f8;
+    padding: 0.0em 3.20em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 0.7em;
+    box-shadow: 0 1em 4em rgba(71, 50, 4, 0.3);
+  }
+  h2{
+    text-align: center;
+    font-size: 19px;
+    margin-bottom: 30px;
+    color: rgb(14, 15, 15);
+  }
+  input,
+  #submit {
+    border: none;
+    outline: none;
+    display: block;
+  }
+  input {
+    width: 100%;
+    background-color: transparent;
+    margin-bottom: 2em;
+    font-size: 20px;
+    padding: 0.0em 0 0.0em 0.0em;
+    border-bottom: 2px solid #202020;
+  }
+  #submit {
+    position: relative;
+    left: 0;
+    font-size: 1.1em;
+    width: 7em;
+    background-color: #131314;
+    color: white;
+    padding: 0.1em 0;
+    margin-top: 2em;
+    border-radius: 0.3em;
+  }
+  #message-ref {
+    font-size: 0.9em;
+    margin-top: 1.5em;
+    color: #121212;
+    visibility: hidden;
+  }
+  input.flx
+  {
+    padding: 0%;
+    left: 20%;
+  }
+  table, th, td {
+  border: 1px solid;
+}
+  
     </style>
 </head>
 <body>
-    <div class="relative flex min-h-screen flex-col jsutify-center overflow-hidden py-6 bg-gray-50 ">
-        <div class="relative bg-white px-6 pb-5 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
-            <div class="mx-auto max-w-md">
-                <h2 class="text-2xl  text-center font-bold my-5">
-                    Registration From
-                </h2>
-                <div class="divide-y  divide-gray-300/50">
-                    <div class="space-y-6 text-base leading-7 text-ray-600">
-                        <form action="" id="user_form">
-                            <label for="name" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">
-                                Name
-                            </label>
-                            <input required type="text" id="name" name="name" class="bg-gray-100 inline-block rounded-lg shadow-md py-3 px-4 mb-5 text-base leading-6 placeolder-gray-500" placeholder="Enter full name" required><br/>
-                            <label for="email" class="text-md w-40 inline-block font-medium leading-3 text-gray-700">Email</label>
-                            <input required type="email" id="email" name="email" class="bg-gray-100 inline-block rounded-lg shadow-md py-3 px-4 mb-5 text-base leading-6 placeolder-gray-500" placeholder="Enter email"><br/>
-                            <label for="password" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">
-                                Password
-                            </label>
-                            <input required type="password" id="password" name="password" class="bg-gray-100 inline-block rounded-lg shadow-md py-3 px-4 mb-5 text-base leading-6 placeolder-gray-500" placeholder="Enter password"><br/>
-                            <label for="dob" class="text-md w-40 inline-block font-medium leading-5 text-gray-700" min="18" max="55">
-                                Date of Birth
-                            </label>
-                            <input required type="date" id="dob" name="dob" class="bg-gray-100 inline-block rounded-lg shadow-md py-3 px-4 mb-5 text-base leading-6 placeolder-gray-500" placeholder="dd/mm/yyyy"><br/>
-                        <label for="acceptTerms" class="text-md w-50 inline-block font-medium leading-5 text-gray-700 mr-4">Accept our Terms & Conditions</label>
-                            <input required type="checkbox" name="acceptTerms" id="acceptTerms" class="bg-gray-100 inline-block shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500">
-                        <button type="submit" id="submit" class="w-fit rounded-lg shadow-lg px-5 py-3 bg-green-500 text-white hover:bg-green-400 focus:outline-none focus block">Submit</button>
-                        </form>
+    <body>
+        <div class="container">
+        <div id="form">
+          <h1 style="text-align-last: center;">Registration Form </h1>
+          <form action="reg-form" id="reg-form">
+              
+             <b> <label for="name">Name</label><br></b>
+              <input type="text" id="name" placeholder="Joe BIden" required autofocus title="Please enter your name in Registration form">
+          <br>
+              
+                <b> <label for="email">Email</label><br></b>
+                  <input type="email" id="email" placeholder="xyz@mmtech.com"  pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" required autofocus title="Please enter email id in Registration form">
+           <br>       
+                  
+                     <b> <label for="password">Password</label><br></b>
+                      <input type="password" id="password" placeholder="************" required autofocus title="Please enter email id in Registration form">
+                      
+               <br>       
+                          <b> <label for="dob">Date Of Birth</label><br></b>
+                           <input type="date" id="dob"  required autofocus title="Please enter email id in Registration form">
+       <input type="checkbox" id="check" class="flx"><p for="check">Accept the Terms and Conditions</p>
+                  
+               <br>   
+                      <button class="submit" type="submit"  autofocus>Submit Form</button>
+                  
+          </form></div>
+          <ul>
+          <li>Must be at least 6 characters long.</li>
+        <li>  Must contain one uppercase letter.</li>
+        <li>  Must contain a number or special character.</li>
+            </ul>
+      
+   
+        
+      
+<div id="x-data"></div>
 
-                    </div>
-                    
-                </div>
-                
-            </div>
-       
-        </div>
-        <div class="relative bg-white px-4 mt-5 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:rounded-lg sm:px-10 ">
-            <div class="mx-auto">
-                <h2 class="text-xl text-center font-bold leadin-right">Entries</h2>
-                <div class="divide-y divide-gray-300/50" id="user-entries"></div>
-            </div>
-        </div>
-    </div>
-    <!-- <script>
-        const email = document.getElementById('email');
-        email.addEventListener('input',()=>validate(email));
-       const submit = document.getElementById(submit)
-       submit.addEventListener('click',()=>validate(email))
-        function validate(element){
-            if(element.validity.typeMismatch){
-                element.setCustomValidity("The Email is not the right format");
-                element.reportValidity();
-            }else{
-                element.setCustomValidity('');
-            }
-        }
-    </script> -->
-    <script src="index.js"></script>
+
+
+    
+  </div>  
+  <script src="./index.js"></script>
 </body>
 </html>
