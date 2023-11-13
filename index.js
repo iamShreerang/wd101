@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Load existing data from storage on page load
     const storedData = JSON.parse(localStorage.getItem('userData')) || [];
-    storedData.forEach(data => addTableRow(data));
+    
+    // Clear existing table contents
+    tableBody.innerHTML = '';
 
     // Function to add a row to the table and update storage
     function addTableRow(data) {
@@ -15,11 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
             row.appendChild(cell);
         });
         tableBody.appendChild(row);
-
-        // Update storage with the new data
-        storedData.push(data);
-        localStorage.setItem('userData', JSON.stringify(storedData));
     }
+
+    // Display existing data in the table on page load
+    storedData.forEach(data => addTableRow(data));
 
     // Event listener for form submission
     registrationForm.addEventListener('submit', function (event) {
@@ -45,8 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const currentDate = new Date();
         const age = currentDate.getFullYear() - dobDate.getFullYear();
 
-        if (age < 18 || age > 55) {
-            alert('Age must be between 18 and 55 years old.');
+        if (age < 18 || age >= 55) {
+            alert('Age must be between 18 (inclusive) and 55 (exclusive) years old.');
             return;
         }
 
@@ -58,6 +59,16 @@ document.addEventListener('DOMContentLoaded', function () {
             dob: dob,
             acceptTerms: acceptTerms ? 'Yes' : 'No'
         });
+
+        // Update storage with the new data
+        storedData.push({
+            name: name,
+            email: email,
+            password: password,
+            dob: dob,
+            acceptTerms: acceptTerms
+        });
+        localStorage.setItem('userData', JSON.stringify(storedData));
 
         // Optionally, you can clear the form fields after submission
         registrationForm.reset();
